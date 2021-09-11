@@ -1,28 +1,23 @@
 <template>
   <div id="app">
-    <img alt="Logo" src="./assets/logo.png" width="200" height="200">
+    <NavBar1></NavBar1>
     <Message msg="Welcome!"/>
   </div>
 </template>
 
 <script>
 import Message from "./components/Message";
+import NavBar1 from "./components/navbars/NavBar1";
 
 export default {
   name: 'App',
   components: {
+    NavBar1,
     Message
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+
 </style>
