@@ -5,6 +5,7 @@
       <!-- TODO: logo should fit screen-size!!! -->
       <img alt="Logo" src="../../assets/logo.png" width="45" height="45">
     </div>
+    <transition name="fade">
     <ul class="nav-links">
       <!-- TODO: menu items should fit screen-size!!! -->
       <li><a href="#">Home</a></li>
@@ -12,7 +13,8 @@
       <li><a href="#">About</a></li>
       <li><a href="#">Contact</a></li>
     </ul>
-    <div class="burger" @click="navSlide">
+    </transition>
+    <div class="burger" v-on:click="navSlide(); show = !show">
       <div class="line1"></div>
       <div class="line2"></div>
       <div class="line3"></div>
@@ -24,13 +26,42 @@
 <script>
 export default {
   name: "NavBar1",
+  data() {
+    return {
+      show: true
+    }
+  },
   methods: {
-    navSlide () {
+    sleep(ms) {
+      return new Promise(resolve => setTimeout(resolve, ms));
+    },
+    async navSlide () {
       // TODO: clean/comment this method
+
+      console.log(this.show);
+
       let burger = document.querySelector('.burger');
       let nav = document.querySelector('.nav-links');
       let navLinks = document.querySelectorAll('.nav-links li');
-      nav.classList.toggle('nav-active');
+
+      // TODO: need to overthink this...maybe find another solution
+      if (this.show) {
+        nav.classList.toggle('nav-active');
+      } else {
+        nav.animate([
+          // keyframes
+          { transform: 'translateX(0%)' },
+          { transform: 'translateX(100%)' }
+        ], {
+          // timing options
+          duration: 500,
+          iterations: 1
+        });
+        await this.sleep(480);
+        nav.classList.toggle('nav-active');
+      }
+
+      // Menu items animation
       navLinks.forEach((link, index) => {
         if (link.style.animation) {
           link.style.animation = '';
@@ -38,6 +69,8 @@ export default {
           link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.5}s`
         }
       })
+
+      // Burger animation
       burger.classList.toggle('toggle');
     }
   }
@@ -119,14 +152,13 @@ nav {
     right: 0;
     height: 88vh;
     top: 12vh;
-    display: flex;
+    display: none;
     flex-direction: column;
     margin-top: 0;
     align-items: center;
     width: 100%;
     opacity: 0.95;
     transform: translateX(100%);
-
   }
 
   .nav-links li {
@@ -148,9 +180,13 @@ nav {
     padding-bottom: 10px;
   }
 
+  .nav-deactive {
+    animation: navMenuFadeOut 0.5s ease backwards 0.25s;
+  }
+
   .nav-active {
-    transform: translateX(0%);
-    transition: transform 0.5s ease-in;
+    animation: navMenuFadeIn 0.5s ease forwards 0.25s;
+    display: flex;
   }
 
   .toggle .line1 {
@@ -178,6 +214,29 @@ nav {
   to {
     opacity: 1;
     transform: translateX(0px);
+  }
+}
+
+
+@keyframes navMenuFadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 0.95;
+    transform: translateX(0%);
+  }
+}
+
+@keyframes navMenuFadeOut {
+  from {
+    opacity: 0.95;
+    transform: translateX(0%);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(100%);
   }
 }
 
