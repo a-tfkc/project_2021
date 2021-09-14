@@ -87,7 +87,7 @@ nav {
   justify-content: space-around;
   align-items: center;
   min-height: 12vh;
-  background-color: #d0c8b6;
+  background-color: var(--theme-color);
   font-family: 'Glory', sans-serif;
 }
 
@@ -142,12 +142,12 @@ nav {
     justify-content: space-between;
     align-items: center;
     min-height: 12vh;
-    background-color: #d0c8b6;
+    background-color: var(--theme-color);
     font-family: 'Glory', sans-serif;
   }
 
   .nav-links {
-    background-color: #d0c8b6;
+    background-color: var(--theme-color);
     position: absolute;
     right: 0;
     height: 88vh;
@@ -157,8 +157,7 @@ nav {
     margin-top: 0;
     align-items: center;
     width: 100%;
-    opacity: 0.95;
-    transform: translateX(100%);
+    opacity: 0;
   }
 
   .nav-links li {

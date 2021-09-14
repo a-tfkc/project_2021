@@ -20,4 +20,7 @@ export default {
 
 <style>
 
+/* IMPORT BUNDLED CSS */
+@import url(./assets/bundled_style.css);
+
 </style>

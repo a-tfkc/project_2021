@@ -1,0 +1,15 @@
+/*
+
+    Bundled css to use all over the project.
+
+    <style>
+        p {
+            background-color: var(--theme-color);
+        }
+    </style>
+
+*/
+
+:root {
+    --theme-color: #275c7a;
+}
