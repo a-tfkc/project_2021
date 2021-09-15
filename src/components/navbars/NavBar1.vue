@@ -5,7 +5,6 @@
       <!-- TODO: logo should fit screen-size!!! -->
       <img alt="Logo" src="../../assets/logo.png" width="45" height="45">
     </div>
-    <transition name="fade">
     <ul class="nav-links">
       <!-- TODO: menu items should fit screen-size!!! -->
       <li><a href="#">Home</a></li>
@@ -13,7 +12,6 @@
       <li><a href="#">About</a></li>
       <li><a href="#">Contact</a></li>
     </ul>
-    </transition>
     <div class="burger" v-on:click="navSlide(); show = !show">
       <div class="line1"></div>
       <div class="line2"></div>
@@ -86,15 +84,21 @@ nav {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  min-height: 12vh;
+
   background-color: var(--theme-color);
   font-family: 'Glory', sans-serif;
+  padding-bottom: 20px;
+  padding-top: 20px;
+}
+
+.logo {
+  width: 5%;
 }
 
 .logo img {
   vertical-align: middle;
-  padding-top: 3px;
-  padding-bottom: 3px;
+  height: auto;
+  width: 100%;
 }
 
 .nav-links {
@@ -129,7 +133,19 @@ nav {
 
 /* Responsive Stuff starting here */
 
+@media screen and (max-width: 1400px) {
+
+  .logo {
+    width: 6%;
+  }
+}
+
 @media screen and (max-width: 1024px) {
+
+  .logo {
+    width: 8%;
+  }
+
   .nav-links {
     width: 60%;
   }
@@ -141,7 +157,7 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    min-height: 12vh;
+
     background-color: var(--theme-color);
     font-family: 'Glory', sans-serif;
   }
@@ -150,10 +166,11 @@ nav {
     background-color: var(--theme-color);
     position: absolute;
     right: 0;
-    height: 88vh;
-    top: 12vh;
+    height: 100vh;
+    top: 0vh;
     display: none;
     flex-direction: column;
+    justify-content: center;
     margin-top: 0;
     align-items: center;
     width: 100%;
@@ -161,6 +178,8 @@ nav {
   }
 
   .nav-links li {
+    margin-top: 5vh;
+    margin-bottom: 5vh;
     opacity: 0;
   }
 
@@ -171,12 +190,13 @@ nav {
   }
 
   .logo {
+    z-index: 1000;
+    width: 10%;
     padding-left: 5%;
   }
 
   .logo img {
-    padding-top: 10px;
-    padding-bottom: 10px;
+
   }
 
   .nav-deactive {
@@ -198,6 +218,24 @@ nav {
 
   .toggle .line3 {
     transform: rotate(45deg) translate(-5px,-6px);
+  }
+
+}
+
+/* TODO: clean-up breakpoint stuff */
+
+@media screen and (max-width: 650px) {
+
+  .logo {
+    width: 12%;
+  }
+
+}
+
+@media screen and (max-width: 500px) {
+
+  .logo {
+    width: 15%;
   }
 
 }
