@@ -1,6 +1,6 @@
 <template>
 
-  <nav>
+  <nav style="position: absolute; z-index: 1; width: 100%">
     <div class="logo">
       <!-- TODO: logo should fit screen-size!!! -->
       <img alt="Logo" src="../../assets/logo.png" width="45" height="45">
@@ -163,7 +163,7 @@ nav {
   }
 
   .nav-links {
-    background-color: var(--theme-color);
+    background-color: black;
     position: absolute;
     right: 0;
     height: 100vh;
@@ -175,6 +175,7 @@ nav {
     align-items: center;
     width: 100%;
     opacity: 0;
+    z-index: 1000;
   }
 
   .nav-links li {
@@ -187,6 +188,7 @@ nav {
     padding-right: 5%;
     display: block;
     cursor: pointer;
+    z-index: 2000;
   }
 
   .logo {

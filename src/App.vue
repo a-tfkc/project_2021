@@ -1,19 +1,20 @@
 <template>
   <div id="app">
     <NavBar1></NavBar1>
-    <Message msg="Welcome!"/>
+    <Slider1></Slider1>
   </div>
 </template>
 
 <script>
-import Message from "./components/Message";
+
+import Slider1 from "./components/slider/Slider1";
 import NavBar1 from "./components/navbars/NavBar1";
 
 export default {
   name: 'App',
   components: {
     NavBar1,
-    Message
+    Slider1,
   }
 }
 </script>

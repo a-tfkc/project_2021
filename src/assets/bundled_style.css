@@ -11,5 +11,6 @@
 */
 
 :root {
-    --theme-color: #275c7a;
+    --theme-color: transparent;
+    --another-color: #275c7a;
 }
