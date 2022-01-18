@@ -1,33 +1,51 @@
 <!DOCTYPE html>
 <html lang="">
+
   <head>
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <!-- TODO: rethink google fonts stuff -->
-    <!-- Add google font-family: Glory -->
+
+    <!-- GOOGLE FONTS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Glory:wght@200&display=swap" rel="stylesheet">
-    <!-- Add stylesheet: needed for styling of body-tag -->
+
+    <!-- GOOGLE ICONS -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- Custom CSS for general styling -->
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="slick.min.css">
-    <link rel="stylesheet" href="slick-theme.min.css">
+
+    <!-- CSS for Slider -->
+    <link rel="stylesheet" href="extra/slick_slider/slick.min.css">
+    <link rel="stylesheet" href="extra/slick_slider/slick-theme.min.css">
+
+    <!-- Website ICON and TITLE -->
     <link rel="icon" href="<%= BASE_URL %>favicon.ico">
-    <title><%= htmlWebpackPlugin.options.title %></title>
+    <title>Photography & Videography</title>
+
   </head>
+
   <body>
+
     <noscript>
       <strong>
           We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled.
           Please enable it to continue.
       </strong>
     </noscript>
-    <script src="jquery.min.js"></script>
-    <script src="slick.min.js"></script>
-    <script src="start.js"></script>
+
+    <!-- Slider JS -->
+    <script src="extra/slick_slider/jquery.min.js"></script>
+    <script src="extra/slick_slider/slick.min.js"></script>
+
+    <!-- MAIN APP -->
     <div id="app"></div>
     <!-- built files will be auto injected -->
 
   </body>
+
 </html>

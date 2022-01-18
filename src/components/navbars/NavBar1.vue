@@ -3,7 +3,7 @@
   <nav style="position: absolute; z-index: 1; width: 100%">
     <div class="logo">
       <!-- TODO: logo should fit screen-size!!! -->
-      <img alt="Logo" src="../../assets/logo.png" width="45" height="45">
+      <img alt="Logo" src="../../assets/images/logo/logo.png" width="45" height="45">
     </div>
     <ul class="nav-links">
       <!-- TODO: menu items should fit screen-size!!! -->
