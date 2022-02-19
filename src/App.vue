@@ -1,22 +1,28 @@
 <template>
 
   <div id="app">
-    <NavBar2></NavBar2>
-    <Slider1></Slider1>
+    <NavBar5 class="desktop"></NavBar5>
+    <NavBar class="mobile"></NavBar>
+    <Slider></Slider>
+    <div style="height: 2000px; background-color: #906E74; position: relative;">
+    </div>
   </div>
 
 </template>
 
 <script>
 
-import NavBar2 from "./components/navbars/NavBar2";
-import Slider1 from "./components/sliders/Slider1";
+
+import Slider from "./components/slider/Slider";
+import NavBar5 from "./components/navbars/NavBar5";
+import NavBar from "./components/navbar/NavBar";
 
 export default {
   name: 'App',
   components: {
-    NavBar2,
-    Slider1,
+    NavBar,
+    NavBar5,
+    Slider,
   }
 }
 
