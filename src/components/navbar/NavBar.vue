@@ -348,7 +348,7 @@ img {
 }
 
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 768px) {
 
   .wholeThing {
     display: none;
